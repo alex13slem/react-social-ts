@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "music",
+    "name": "Музыка"
+  },
+  {
+    "slug": "sport",
+    "name": "Спорт"
+  },
+  {
+    "slug": "books",
+    "name": "Книги"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "avatar": "https://cs8.pikabu.ru/avatars/2661/x2661935-1443495004.png",
+    "name": "Alex",
+    "city": "Moscow",
+    "age": 30,
+    "hobbies": ["books"],
+    "friends": [{ "id": 2 }, { "id": 3 }, { "id": 4 }]
+  },
+  {
+    "id": 2,
+    "avatar": "https://cdn1.flamp.ru/3848b7924f5342d9343060fb1dfe483b_300_300.jpg",
+    "name": "Vadim",
+    "city": "Moscow",
+    "age": 25,
+    "hobbies": ["sport", "music"],
+    "friends": [{ "id": 1 }, { "id": 3 }, { "id": 4 }]
+  },
+  {
+    "id": 3,
+    "avatar": "https://sun9-61.userapi.com/impf/c846218/v846218756/12df9f/O0jB76A7kog.jpg?size=320x320&quality=96&sign=aead2c6c4d9f69610017a3994fe265b9&c_uniq_tag=MXHpcpuQYXz7WIOoj2X3oqKKpS834YV2_iCSjp0V4mQ&type=album",
+    "name": "Alexey",
+    "city": "Moscow",
+    "age": 35,
+    "hobbies": ["sport", "music"],
+    "friends": [{ "id": 1 }, { "id": 2 }, { "id": 4 }]
+  },
+  {
+    "id": 4,
+    "avatar": "https://s3.amazonaws.com/paxful/avatar/2019/07/68c85a422c28c9bc25692ed602fa7c30.jpg",
+    "name": "Sergey",
+    "city": "Moscow",
+    "age": 40,
+    "hobbies": ["sport", "music"],
+    "friends": [{ "id": 1 }, { "id": 2 }, { "id": 3 }]
+  }
+]

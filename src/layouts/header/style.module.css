@@ -1,0 +1,28 @@
+.root {
+  display: grid;
+  grid-template-columns: subgrid;
+
+  position: sticky;
+  top: 0;
+
+  background-color: rgba(245, 245, 245, 0.3);
+  padding-block: 0.5rem;
+}
+.container {
+  grid-column: 2 / -2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}

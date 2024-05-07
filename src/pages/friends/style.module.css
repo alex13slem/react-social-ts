@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.search-input {
+  outline: none;
+  line-height: 2;
+  padding-inline: 0.5rem;
+}
