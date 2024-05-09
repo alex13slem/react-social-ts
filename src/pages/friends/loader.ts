@@ -1,13 +1,21 @@
 import { json } from 'react-router-dom';
-import usersData from '../../data/users.json';
+import client from '../../api/client';
+import { User } from '../../types/user';
 
 async function loader() {
-  const currUser = usersData.find((u) => u.id == 1)!;
-  const users = currUser.friends.map((f) =>
-    usersData.find((u) => u.id == f.id)
+  const usersData = await client.get<User[]>('/users');
+  const currUser = usersData.find((u) => parseInt(u.id) === 1)!;
+
+  const otherUsers = usersData.filter(
+    (u) =>
+      parseInt(u.id) !== 1 &&
+      !currUser.friends.some((f) => f.id === parseInt(u.id))
+  );
+  const userFriends = usersData.filter((u) =>
+    currUser.friends.some((f) => f.id === parseInt(u.id))
   );
 
-  return json({ users }, { status: 200 });
+  return json({ userFriends, otherUsers }, { status: 200 });
 }
 
 export default loader;

@@ -1,12 +1,14 @@
 import { LoaderFunctionArgs, json } from 'react-router-dom';
-import hobbiesData from '../../data/hobbies.json';
-import usersData from '../../data/users.json';
+import client from '../../api/client';
+import { Hobby } from '../../types/hobby';
+import { User } from '../../types/user';
 
 async function loader({ params }: LoaderFunctionArgs) {
-  const user = usersData.find((u) => +u.id === Number(params.id));
+  const user = await client.get<User>(`/users/${params.id}`);
   if (!user) {
     throw new Response('User not found', { status: 404 });
   }
+  const hobbiesData = await client.get<Hobby[]>('/hobbies');
 
   const hobbies = user.hobbies.map((slug) =>
     hobbiesData.find((hobby) => hobby.slug === slug)

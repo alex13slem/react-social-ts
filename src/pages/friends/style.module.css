@@ -9,3 +9,20 @@
   line-height: 2;
   padding-inline: 0.5rem;
 }
+
+.user-card {
+  display: grid;
+  & > :global(*) {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+
+.btns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  & > :global(*) {
+    display: contents;
+  }
+}

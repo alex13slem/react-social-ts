@@ -8,7 +8,7 @@ interface Props extends ComponentProps<FC>, HTMLAttributes<HTMLDivElement> {
   href?: string;
 }
 
-const FriendCard: FC<Props> = ({ user, href = '' }) => {
+const UserCard: FC<Props> = ({ user, href = '' }) => {
   const { name, city, age, avatar } = user;
 
   const Tag = href ? Link : 'article';
@@ -31,4 +31,4 @@ const FriendCard: FC<Props> = ({ user, href = '' }) => {
   );
 };
 
-export default FriendCard;
+export default UserCard;
