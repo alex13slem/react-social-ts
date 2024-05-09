@@ -1,0 +1,33 @@
+.root {
+  grid-column: 2 / -2;
+
+  & :global(h1) {
+    margin-top: 3rem;
+    text-align: center;
+  }
+}
+
+.grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+  & > :global(form),
+  & > :global(a) {
+    display: contents;
+  }
+}
+.user-item {
+  & :global(img) {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.btn-create {
+  grid-column: 1 / -1;
+  flex: 0 0 calc(7rem * 5 + 1rem * 4);
+  margin-top: 1rem;
+}

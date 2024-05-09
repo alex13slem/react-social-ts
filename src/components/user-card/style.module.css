@@ -1,7 +1,7 @@
 .root {
   display: flex;
   gap: 1rem;
-  padding: 0.5rem;
+  padding-block: 0.5rem;
   border-radius: 0.25rem;
   transition: background-color 0.3s ease-in-out;
   &[href]:hover {
@@ -23,6 +23,7 @@
 }
 
 .info {
+  flex: 1 1 auto;
   & h3 {
     font-family: monospace;
     font-size: 1.2rem;

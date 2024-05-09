@@ -1,0 +1,19 @@
+.form {
+  margin-top: 2rem;
+  display: grid;
+  justify-content: start;
+  gap: 1rem;
+}
+.label-field {
+  display: flex;
+  gap: 0.5rem;
+  & :global(input[type='text']),
+  :global(input[type='number']),
+  :global(input[type='email']) {
+    flex: 1 1 auto;
+  }
+}
+
+.cb-block {
+  display: grid;
+}

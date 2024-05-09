@@ -10,14 +10,11 @@ const loader = async () => {
 
   const user = await client.get<User>('/users/' + currUserId);
   const hobbiesData = await client.get<Hobby[]>('/hobbies');
-  const hobbies = user.hobbies.map((slug) =>
-    hobbiesData.find((hobby) => hobby.slug === slug)
-  );
 
   return json(
     {
       user,
-      hobbies,
+      hobbies: hobbiesData,
     },
     { status: 200 }
   );

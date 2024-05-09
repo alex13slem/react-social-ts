@@ -9,14 +9,18 @@ interface Props extends ComponentProps<FC>, HTMLAttributes<HTMLDivElement> {
 const UserDetail: FC<Props> = ({ hobbies }) => {
   return (
     <article className={css['root']}>
-      <h3>Хобби</h3>
-      <ul className={css['hobbies']}>
-        {hobbies.map((hobby) => (
-          <li key={hobby.slug} className={css['hobby']}>
-            {hobby.name}
-          </li>
-        ))}
-      </ul>
+      {!!hobbies.length && (
+        <>
+          <h3>Хобби</h3>
+          <ul className={css['hobbies']}>
+            {hobbies.map((hobby) => (
+              <li key={hobby.slug} className={css['hobby']}>
+                {hobby.name}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </article>
   );
 };

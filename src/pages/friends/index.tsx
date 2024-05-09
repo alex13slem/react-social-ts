@@ -47,7 +47,7 @@ const PageFriends: FC<Props> = () => {
         <>
           <h2>Друзья</h2>
           {displayFriends.map((user) => (
-            <div className={css['user-card']}>
+            <div key={user.id} className={css['user-card']}>
               <FriendCard
                 key={user.id}
                 user={user}
@@ -72,7 +72,7 @@ const PageFriends: FC<Props> = () => {
         <>
           <h2>Остальные пользователи</h2>
           {displayOtherUsers.map((user) => (
-            <div className={css['user-card']}>
+            <div key={user.id} className={css['user-card']}>
               <FriendCard
                 key={user.id}
                 user={user}

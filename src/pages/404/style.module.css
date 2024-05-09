@@ -1,0 +1,10 @@
+.root {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  text-align: center;
+
+  & :global(h2) {
+    font-size: 16rem;
+  }
+}

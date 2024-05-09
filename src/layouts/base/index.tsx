@@ -1,17 +1,23 @@
 import { ComponentProps, FC, HTMLAttributes } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import css from './style.module.css';
 import Header from '../header';
 import Aside from '../aside';
 
-interface Props extends ComponentProps<FC>, HTMLAttributes<HTMLDivElement> {}
+export type RootContextType = { currUserId: number | null };
+
+interface Props extends ComponentProps<FC>, HTMLAttributes<HTMLDivElement> {
+  isNotAuth?: boolean;
+}
 
 const BaseLayout: FC<Props> = () => {
+  const { currUserId } = useLoaderData() as { currUserId: number };
+
   return (
     <div className={css.root}>
       <Header />
-      <Aside />
-      <Outlet />
+      {currUserId && <Aside />}
+      <Outlet context={{ currUserId } satisfies RootContextType} />
     </div>
   );
 };
