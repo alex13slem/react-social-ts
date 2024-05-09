@@ -50,9 +50,6 @@
         },
         {
           "id": 4
-        },
-        {
-          "id": 1715261282340
         }
       ]
     },
@@ -63,8 +60,8 @@
       "city": "Moscow",
       "age": 40,
       "hobbies": [
-        "sport",
-        "music"
+        "music",
+        "sport"
       ],
       "friends": [
         {

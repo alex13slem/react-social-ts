@@ -11,14 +11,13 @@
 }
 
 .user-card {
-  display: grid;
-  & > :global(*) {
-    grid-row: 1;
-    grid-column: 1;
-  }
+  position: relative;
 }
 
 .btns {
+  position: absolute;
+  inset: 0.5rem;
+  left: auto;
   display: flex;
   justify-content: flex-end;
   align-items: center;

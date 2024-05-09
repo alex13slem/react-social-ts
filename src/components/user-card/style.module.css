@@ -1,7 +1,7 @@
 .root {
   display: flex;
   gap: 1rem;
-  padding-block: 0.5rem;
+  padding: 0.5rem;
   border-radius: 0.25rem;
   transition: background-color 0.3s ease-in-out;
   &[href]:hover {
