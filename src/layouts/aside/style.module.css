@@ -1,6 +1,13 @@
+.root {
+  position: sticky;
+  top: calc(var(--header-height) + 0.5rem);
+  height: fit-content;
+}
+
 .nav {
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
 
   & a {
     padding-inline: 0.5rem;

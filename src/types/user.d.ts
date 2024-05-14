@@ -5,5 +5,5 @@ export interface User {
   city: string;
   age: number;
   hobbies: string[];
-  friends: { id: number }[];
+  friends: { id: string }[];
 }

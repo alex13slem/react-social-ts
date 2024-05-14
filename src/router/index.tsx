@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, redirect } from 'react-router-dom';
 
 import BaseLayout from '../layouts/base';
 import PageHome from '../pages/home';
@@ -8,6 +8,8 @@ import PageFriend from '../pages/friend';
 import PageLogin from '../pages/login';
 import PageSignup from '../pages/signup';
 import PageNotFound from '../pages/404';
+import PageChats from '../pages/chats';
+import PageChat from '../pages/chat';
 
 import loaderRoot from './loader';
 import loaderLogin from '../pages/login/loader';
@@ -15,6 +17,8 @@ import loaderHome from '../pages/home/loader';
 import loaderFriends from '../pages/friends/loader';
 import loaderFriend from '../pages/friend/loader';
 import loaderEdit from '../pages/edit/loader';
+import loaderChats from '../pages/chats/loader';
+import loaderChat from '../pages/chat/loader';
 
 import actionFriendRemove from '../pages/friend/remove/action';
 import actionFriendAdd from '../pages/friend/add/action';
@@ -22,6 +26,7 @@ import actionLogin from '../pages/login/action';
 import actionLogout from '../pages/logout/action';
 import actionSignup from '../pages/signup/action';
 import actionEdit from '../pages/edit/action';
+import actionChat from '../pages/chat/action';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +49,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'logout',
+        loader: () => redirect('/'),
         action: actionLogout,
       },
       {
@@ -75,16 +81,25 @@ const router = createBrowserRouter([
           {
             path: 'add',
             action: actionFriendAdd,
+            loader: () => redirect('../'),
           },
           {
             path: 'remove',
             action: actionFriendRemove,
+            loader: () => redirect('../'),
           },
         ],
       },
       {
-        path: 'chat',
-        element: <main>chat</main>,
+        path: 'chats',
+        element: <PageChats />,
+        loader: loaderChats,
+      },
+      {
+        path: 'chats/:id',
+        element: <PageChat />,
+        loader: loaderChat,
+        action: actionChat,
       },
     ],
   },

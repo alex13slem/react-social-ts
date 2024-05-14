@@ -10,7 +10,7 @@ const Aside: FC<Props> = () => {
       <nav className={css.nav}>
         <NavLink to="/">Главная</NavLink>
         <NavLink to="/friends">Друзья</NavLink>
-        <NavLink to="/chat">Чат</NavLink>
+        <NavLink to="/chats">Чат</NavLink>
       </nav>
     </aside>
   );

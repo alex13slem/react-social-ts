@@ -1,0 +1,53 @@
+.day {
+  position: relative;
+}
+
+.date {
+  font-size: 1rem;
+  position: sticky;
+  top: calc(var(--header-height) + 0.5rem);
+  z-index: 1;
+  padding-block: 0.5rem;
+  /* margin-block: 0.5rem; */
+
+  display: flex;
+  justify-content: center;
+  & > p {
+    background-color: hsla(0, 0%, 100%, 0.1);
+    line-height: 2;
+    padding-inline: 1em;
+    border-radius: 0.5em;
+  }
+}
+
+.link {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  padding-block: 0.5rem;
+  & > img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  & > p {
+    flex: 1;
+  }
+  & > time {
+    white-space: nowrap;
+  }
+}
+
+.form {
+  display: flex;
+
+  gap: 0.5rem;
+  padding-block: 1rem;
+
+  & > input {
+    flex: 1;
+    padding-inline: 0.5rem;
+  }
+}

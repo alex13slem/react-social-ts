@@ -9,7 +9,6 @@ async function action({ request, params }: ActionFunctionArgs) {
   }
   const currUserId = await localforage.getItem('currUserId');
   const currUser = await client.get<User>('/users/' + currUserId);
-  const userId = parseInt(params.id);
 
   let data: User;
   let res: User;
@@ -19,7 +18,7 @@ async function action({ request, params }: ActionFunctionArgs) {
       try {
         data = {
           ...currUser,
-          friends: [...currUser.friends, { id: userId }],
+          friends: [...currUser.friends, { id: params.id }],
         };
         res = await client.patch(`/users/${currUser.id}`, data);
         return json(res, { status: 200 });

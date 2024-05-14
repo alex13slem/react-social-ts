@@ -30,7 +30,7 @@ const UserCard: FC<Props> = ({ user, href = '' }) => {
         </p>
       </div>
 
-      {currUserId && currUserId === +user.id && (
+      {currUserId && currUserId === user.id && (
         <div className={css['controls']}>
           <Link to={`/edit`}>
             <button>Редактировать</button>

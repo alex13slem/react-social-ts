@@ -4,10 +4,12 @@
 
   position: sticky;
   top: 0;
+  z-index: 10;
 
   background-color: rgba(245, 245, 245, 0.3);
+  backdrop-filter: blur(20px);
   padding-block: 0.5rem;
-  height: 4rem;
+  height: var(--header-height);
 }
 .container {
   grid-column: 2 / -2;

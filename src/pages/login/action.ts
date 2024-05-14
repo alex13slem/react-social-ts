@@ -5,11 +5,10 @@ async function action({ request, params }: ActionFunctionArgs) {
   if (!params.id) {
     throw new Response('Invalid request', { status: 400 });
   }
-  const userId = parseInt(params.id);
   switch (request.method) {
     case 'POST':
       try {
-        localforage.setItem('currUserId', userId);
+        localforage.setItem('currUserId', params.id);
         return new Response(null, { status: 200 });
       } catch (error) {
         throw new Response('Error logging in', { status: 500 });

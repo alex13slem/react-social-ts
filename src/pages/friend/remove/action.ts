@@ -9,7 +9,6 @@ async function action({ request, params }: ActionFunctionArgs) {
   }
   const currUserId = await localforage.getItem('currUserId');
   const currUser = await client.get<User>('/users/' + currUserId);
-  const userId = parseInt(params.id);
 
   let data: User;
 
@@ -17,7 +16,7 @@ async function action({ request, params }: ActionFunctionArgs) {
     case 'POST':
       data = {
         ...currUser,
-        friends: currUser.friends.filter((u) => u.id !== userId),
+        friends: currUser.friends.filter((u) => u.id !== params.id),
       };
       await client.patch(`/users/${currUser.id}`, data);
       break;

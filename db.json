@@ -6,12 +6,13 @@
       "name": "Alex",
       "city": "Moscow",
       "age": 30,
-      "hobbies": [
-        "books"
-      ],
+      "hobbies": ["books"],
       "friends": [
         {
-          "id": 2
+          "id": "2"
+        },
+        {
+          "id": "3"
         }
       ]
     },
@@ -21,16 +22,13 @@
       "name": "Vadim",
       "city": "Moscow",
       "age": 25,
-      "hobbies": [
-        "sport",
-        "music"
-      ],
+      "hobbies": ["sport", "music"],
       "friends": [
         {
-          "id": 3
+          "id": "3"
         },
         {
-          "id": 4
+          "id": "4"
         }
       ]
     },
@@ -40,18 +38,8 @@
       "name": "Alexey",
       "city": "Moscow",
       "age": 35,
-      "hobbies": [
-        "sport",
-        "music"
-      ],
-      "friends": [
-        {
-          "id": 2
-        },
-        {
-          "id": 4
-        }
-      ]
+      "hobbies": ["sport", "music"],
+      "friends": []
     },
     {
       "id": "4",
@@ -59,39 +47,37 @@
       "name": "Sergey",
       "city": "Moscow",
       "age": 40,
-      "hobbies": [
-        "music",
-        "sport"
-      ],
-      "friends": [
-        {
-          "id": 1
-        },
-        {
-          "id": 2
-        },
-        {
-          "id": 3
-        }
-      ]
+      "hobbies": ["music", "sport"],
+      "friends": []
     },
     {
       "id": "1715261282340",
       "name": "Александр",
       "city": "Полоцк",
       "age": 28,
-      "hobbies": [
-        "music"
-      ],
+      "hobbies": ["music"],
       "friends": [
         {
-          "id": 1
+          "id": "1"
         },
         {
-          "id": 2
+          "id": "1715282434012"
         }
       ],
       "avatar": "https://avatars.githubusercontent.com/u/104124319?s=400&u=92419eeff967f352300505380e34508b5281e585&v=4"
+    },
+    {
+      "id": "1715282434012",
+      "name": "Лиза",
+      "city": "Полоцк",
+      "age": 27,
+      "avatar": "https://sun9-68.userapi.com/impg/b1hQLxRJfpf4Pg4TH8rU0bcmYoLTx24_Kr48zQ/z83Cgu6iVSk.jpg?size=1728x2160&quality=95&sign=011a88ebfd96ed503a7a938477ddab61&type=album",
+      "friends": [
+        {
+          "id": "1715261282340"
+        }
+      ],
+      "hobbies": ["sport", "books"]
     }
   ],
   "hobbies": [
@@ -109,6 +95,162 @@
       "slug": "books",
       "name": "Книги",
       "id": "1d1b"
+    }
+  ],
+  "messages": [
+    {
+      "text": "Hello, how are you?",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-01T12:00:00.000Z",
+      "id": "7bd7"
+    },
+    {
+      "text": "I'm fine, thank you",
+      "from": "2",
+      "to": "1",
+      "createdAt": "2022-08-01T12:05:00.000Z",
+      "id": "706d"
+    },
+    {
+      "text": "I'm fine, thank you too",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-01T12:10:00.000Z",
+      "id": "dd5e"
+    },
+    {
+      "text": "Hello, how are you?",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-02T12:00:00.000Z",
+      "id": "1a2b"
+    },
+    {
+      "text": "I'm great, thanks!",
+      "from": "2",
+      "to": "1",
+      "createdAt": "2022-08-02T12:05:00.000Z",
+      "id": "3c4d"
+    },
+    {
+      "text": "That's good to hear!",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-02T12:10:00.000Z",
+      "id": "5e6f"
+    },
+    {
+      "text": "Hi, how's it going?",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-03T12:00:00.000Z",
+      "id": "7bd7"
+    },
+    {
+      "text": "I'm doing well, thanks",
+      "from": "2",
+      "to": "1",
+      "createdAt": "2022-08-03T12:05:00.000Z",
+      "id": "706d"
+    },
+    {
+      "text": "Great to hear!",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-03T12:10:00.000Z",
+      "id": "dd5e"
+    },
+    {
+      "text": "Hey, what's up?",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-04T12:00:00.000Z",
+      "id": "1a2b"
+    },
+    {
+      "text": "Not much, just hanging out",
+      "from": "2",
+      "to": "1",
+      "createdAt": "2022-08-04T12:05:00.000Z",
+      "id": "3c4d"
+    },
+    {
+      "text": "That's cool, same here",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-04T12:10:00.000Z",
+      "id": "5e6f"
+    },
+    {
+      "text": "How's your week been?",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-05T12:00:00.000Z",
+      "id": "7bd7"
+    },
+    {
+      "text": "It's been good so far, thanks for asking",
+      "from": "2",
+      "to": "1",
+      "createdAt": "2022-08-05T12:05:00.000Z",
+      "id": "706d"
+    },
+    {
+      "text": "Glad to hear that!",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-05T12:10:00.000Z",
+      "id": "dd5e"
+    },
+    {
+      "text": "Hello, how are you today?",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-06T12:00:00.000Z",
+      "id": "1a2b"
+    },
+    {
+      "text": "I'm doing well, thanks for asking",
+      "from": "2",
+      "to": "1",
+      "createdAt": "2022-08-06T12:05:00.000Z",
+      "id": "3c4d"
+    },
+    {
+      "text": "Great to hear!",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-06T12:10:00.000Z",
+      "id": "5e6f"
+    },
+    {
+      "text": "Hey, how's your day going?",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-07T12:00:00.000Z",
+      "id": "7bd7"
+    },
+    {
+      "text": "It's going well, thanks",
+      "from": "2",
+      "to": "1",
+      "createdAt": "2022-08-07T12:05:00.000Z",
+      "id": "706d"
+    },
+    {
+      "text": "Good to hear!",
+      "from": "1",
+      "to": "2",
+      "createdAt": "2022-08-07T12:10:00.000Z",
+      "id": "dd5e"
+    },
+    {
+      "text": "I'm fine, thank you too too",
+      "from": "3",
+      "to": "4",
+      "createdAt": "2022-08-01T12:00:00.000Z",
+      "id": "cbae"
     }
   ]
 }

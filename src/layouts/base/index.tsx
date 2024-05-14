@@ -4,14 +4,14 @@ import css from './style.module.css';
 import Header from '../header';
 import Aside from '../aside';
 
-export type RootContextType = { currUserId: number | null };
+export type RootContextType = { currUserId: string | null };
 
 interface Props extends ComponentProps<FC>, HTMLAttributes<HTMLDivElement> {
   isNotAuth?: boolean;
 }
 
 const BaseLayout: FC<Props> = () => {
-  const { currUserId } = useLoaderData() as { currUserId: number };
+  const { currUserId } = useLoaderData() as { currUserId: string };
 
   return (
     <div className={css.root}>
