@@ -1,9 +1,11 @@
 .root {
+  min-height: 100svh;
   display: grid;
   grid-template-areas:
     'header header header header'
     '. aside main .';
   grid-template-columns: auto 180px min(700px, 100%) auto;
+  grid-template-rows: auto 1fr;
   gap: 0.5rem;
 }
 

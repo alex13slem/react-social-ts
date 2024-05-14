@@ -20,7 +20,7 @@ async function loader({ params }: LoaderFunctionArgs) {
     )
     .map((m) => ({
       ...m,
-      user: m.from === currUserId ? user : currUser,
+      user: m.from === currUserId ? currUser : user,
     }));
 
   const messagesPerDay = messages.reduce((acc, m) => {
@@ -31,8 +31,6 @@ async function loader({ params }: LoaderFunctionArgs) {
     acc[date].push(m);
     return acc;
   }, {} as { [key: string]: Message[] });
-
-  console.log(messagesPerDay);
 
   return json({ messagesPerDay }, { status: 200 });
 }

@@ -1,6 +1,6 @@
 import { ComponentProps, FC, HTMLAttributes, useEffect, useState } from 'react';
 import css from './style.module.css';
-import { Form, useLoaderData } from 'react-router-dom';
+import { Form, Link, useLoaderData } from 'react-router-dom';
 import FriendCard from '../../components/user-card';
 import { User } from '../../types/user';
 import { PajamasRemove } from '../../components/svg/pajamas-remove';
@@ -54,6 +54,9 @@ const PageFriends: FC<Props> = () => {
                 href={'/friends/' + user.id}
               />
               <div className={css['btns']}>
+                <Link to={'/chats/' + user.id}>
+                  <button>Написать</button>
+                </Link>
                 <Form
                   method="post"
                   action={`/friends/${user.id}/remove`}

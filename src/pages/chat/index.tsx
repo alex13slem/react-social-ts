@@ -1,9 +1,10 @@
 import { ComponentProps, FC, HTMLAttributes, useEffect, useRef } from 'react';
 import css from './style.module.css';
-import { Form, useLoaderData } from 'react-router-dom';
+import { useFetcher, useLoaderData, useParams } from 'react-router-dom';
 import { Message } from '../../types/message';
 import { User } from '../../types/user';
 import { formatMessageDate } from '../../utils/formatMessageDate';
+import { useCurrUserId } from '../../hooks/useCurrUserId';
 
 interface Props extends ComponentProps<FC>, HTMLAttributes<HTMLDivElement> {}
 
@@ -12,14 +13,27 @@ interface PreviewMessage extends Message {
 }
 
 const PageChat: FC<Props> = () => {
+  const { id: userId } = useParams();
+  const { currUserId } = useCurrUserId();
   const { messagesPerDay } = useLoaderData() as {
     messagesPerDay: { [key: string]: PreviewMessage[] };
   };
+  const fetcher = useFetcher();
+
   const messageInput = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (fetcher.state === 'idle' && messageInput.current) {
+      messageInput.current.value = '';
+      messageInput.current.scrollIntoView({ block: 'end' });
+    }
+  }, [fetcher]);
+
   useEffect(() => {
     if (messageInput.current)
       messageInput.current.scrollIntoView({ block: 'end' });
   }, []);
+
   return (
     <main className={css.root}>
       <div className={css.messages}>
@@ -35,6 +49,7 @@ const PageChat: FC<Props> = () => {
             {messages.map((m) => (
               <div className={css.link} key={m.createdAt}>
                 <img src={m.user.avatar} alt={m.user.name} />
+                <h3>{m.user.name}</h3>
                 <p>{m.text}</p>
                 <time dateTime={new Date(m.createdAt).toISOString()}>
                   <span>{new Date(m.createdAt).toLocaleTimeString()}</span>
@@ -44,10 +59,14 @@ const PageChat: FC<Props> = () => {
           </div>
         ))}
       </div>
-      <Form className={css.form} method="post" navigate={false}>
-        <input type="text" ref={messageInput} />
-        <button type="submit">Отправить</button>
-      </Form>
+      <fetcher.Form className={css.form} method="post">
+        <input type="hidden" name="from" value={currUserId ?? ''} />
+        <input type="hidden" name="to" value={userId ?? ''} />
+        <input type="text" name="message" ref={messageInput} />
+        <button type="submit">
+          {fetcher.state !== 'idle' && fetcher.data ? 'Отправка' : 'Отправить'}
+        </button>
+      </fetcher.Form>
     </main>
   );
 };
